@@ -59,7 +59,7 @@ housing-app/
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/YOUR_USERNAME/UniStay.git
+   git clone https://github.com/udara-ukv/UniStay.git
    cd UniStay
    ```
 
