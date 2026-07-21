@@ -6,3 +6,8 @@ dist/
 *.db-shm
 uploads/*
 !uploads/.gitkeep
+__pycache__/
+*.pyc
+venv/
+server/venv/
+.venv/

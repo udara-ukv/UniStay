@@ -80,3 +80,9 @@ export const roommateAPI = {
 };
 
 export default api;
+
+const chatAPI = {
+  send: (payload: { message: string }) => api.post('/chat', payload),
+};
+
+export { chatAPI };

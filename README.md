@@ -7,8 +7,8 @@ A full-stack student housing platform built to help university students find ver
 | Layer | Technology |
 |-------|-----------|
 | **Frontend** | React 18, TypeScript, Vite |
-| **Backend** | Node.js, Express.js |
-| **Database** | SQLite (better-sqlite3) |
+| **Backend** | Python, FastAPI |
+| **Database** | SQLite |
 | **Styling** | CSS with modern design system |
 | **Auth** | JWT + bcrypt |
 
@@ -34,17 +34,13 @@ housing-app/
 │   │   ├── services/
 │   │   └── App.tsx
 │   └── package.json
-├── server/          # Node.js + Express backend
-│   ├── src/
-│   │   ├── routes/
-│   │   ├── models/
-│   │   ├── middleware/
-│   │   ├── services/
-│   │   └── index.js
+├── server/          # Python FastAPI backend
+│   ├── app.py
+│   ├── requirements.txt
 │   ├── database/
 │   │   ├── schema.sql
 │   │   └── seed.sql
-│   └── package.json
+│   └── uploads/
 └── README.md
 ```
 
@@ -52,7 +48,9 @@ housing-app/
 
 ### Prerequisites
 
-- Node.js 18+
+- Python 3.11+
+- pip
+- Node.js 18+ (for frontend)
 - npm
 
 ### Installation
@@ -66,7 +64,7 @@ housing-app/
 2. **Install server dependencies**
    ```bash
    cd server
-   npm install
+   pip install -r requirements.txt
    ```
 
 3. **Install client dependencies**
@@ -75,29 +73,30 @@ housing-app/
    npm install
    ```
 
-4. **Set up the database**
-   ```bash
-   cd ../server
-   # The database will be created automatically on first run
-   # To seed with sample data:
-   sqlite3 database/unistay.db < database/seed.sql
+4. **Database setup**
+   ```
+   Note: The database will be created automatically on first run.
+   Sample data will be seeded automatically.
    ```
 
 5. **Start the development servers**
 
-   Backend (from `/server`):
+   **Terminal 1 - Backend (Python FastAPI, from `/server`):**
    ```bash
-   npm run dev
+   cd server
+   uvicorn app:app --reload --host 0.0.0.0 --port 3001
    ```
 
-   Frontend (from `/client`):
+   **Terminal 2 - Frontend (from `/client`):**
    ```bash
+   cd client
    npm run dev
    ```
 
 6. **Open the app**
    - Frontend: http://localhost:5173
-   - Backend API: http://localhost:3000
+   - Backend API: http://localhost:3001
+   - API Health Check: http://localhost:3001/api/health
 
 ## 📊 API Endpoints
 
