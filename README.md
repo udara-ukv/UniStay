@@ -1,6 +1,6 @@
 # 🏠 UniStay - Student Housing Platform
 
-A full-stack student housing platform built to help university students find verified accommodation near their campus. Features property listings, student verification, roommate matching, and review systems.
+A full-stack student housing platform built to help university students in Sri Lanka find verified accommodation near campus. The app combines a React + TypeScript frontend with a Python FastAPI backend, and includes multi-role auth, roommate matching, admin controls, and an in-app chat assistant.
 
 ## 🚀 Tech Stack
 
@@ -14,14 +14,16 @@ A full-stack student housing platform built to help university students find ver
 
 ## ✨ Features
 
-- 🔍 **Property Search** — Filter listings by location, price, room type, and gender preference
-- 🏡 **Listing Management** — Property owners can create, edit, and manage listings
-- ⭐ **Reviews & Ratings** — Students can rate and review accommodations
-- 💬 **Inquiries** — Direct messaging between students and property owners
-- 👥 **Roommate Matching** — Find compatible roommates based on preferences
-- ❤️ **Favorites** — Save and manage favorite listings
-- 🔐 **Authentication** — Secure JWT-based auth with role-based access (student/owner/admin)
-- ✅ **Verification** — Student and property verification system
+- 🔍 **Property Search** — Filter listings by location, rent, room type, and gender preference
+- 🏡 **Listing Management** — Owners can create, update, and remove rental listings with images
+- ⭐ **Reviews & Ratings** — Students can submit reviews and ratings for accommodations
+- 💬 **Inquiries** — Send and track messages between tenants and property owners
+- 👥 **Roommate Matching** — Match students to compatible roommates using profile preferences
+- 🤖 **Chat Assistant** — Ask the app for listings, availability, and guidance via a built-in chatbot
+- 🛠️ **Admin Dashboard** — Review site activity, manage users, and approve or reject listings
+- ❤️ **Favorites** — Save and manage favorite properties
+- 🔐 **Authentication** — JWT-backed auth with student, owner, and admin roles
+- ✅ **Verification** — Student verification plus listing verification workflows
 
 ## 📁 Project Structure
 
@@ -107,10 +109,13 @@ housing-app/
 | GET | `/api/listings` | Get all listings |
 | POST | `/api/listings` | Create a listing |
 | GET | `/api/listings/:id` | Get listing details |
+| PUT | `/api/listings/:id` | Update a listing |
+| DELETE | `/api/listings/:id` | Delete a listing |
 | GET | `/api/reviews/:listingId` | Get reviews for a listing |
 | POST | `/api/reviews` | Create a review |
 | GET | `/api/inquiries` | Get user inquiries |
 | POST | `/api/inquiries` | Send an inquiry |
+| POST | `/api/chat` | Send a chatbot message |
 
 ## 📝 License
 

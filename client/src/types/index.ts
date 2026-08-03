@@ -82,6 +82,7 @@ export interface Inquiry {
   listing_title?: string;
   listing_image?: string;
   student_name?: string;
+  student_email?: string;
   owner_name?: string;
   rent?: number;
   location?: string;

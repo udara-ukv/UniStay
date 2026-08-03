@@ -27,11 +27,11 @@ export default function AdminDashboard() {
       <h1 style={{fontSize:'28px',fontWeight:800,marginBottom:'24px'}}>🛡️ Admin Dashboard</h1>
       <div className="stats-grid">
         {[
-          { icon: '👥', value: analytics.users.total, label: 'Total Users', color: '#6366f1' },
+          { icon: '👥', value: analytics.users.total, label: 'Total Users', color: '#E8634A' },
           { icon: '🏠', value: analytics.listings.approved, label: 'Active Listings', color: '#10b981' },
           { icon: '⏳', value: analytics.listings.pending, label: 'Pending Review', color: '#f59e0b' },
           { icon: '📩', value: analytics.inquiries.total, label: 'Inquiries', color: '#06b6d4' },
-          { icon: '⭐', value: analytics.reviews.total, label: 'Reviews', color: '#8b5cf6' },
+          { icon: '⭐', value: analytics.reviews.total, label: 'Reviews', color: '#a78bfa' },
           { icon: '💰', value: `Rs.${analytics.avgRent.toLocaleString()}`, label: 'Avg. Rent', color: '#ec4899' },
         ].map((s, i) => (
           <div className="card stat-card" key={i}>

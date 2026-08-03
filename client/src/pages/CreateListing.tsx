@@ -61,7 +61,7 @@ export default function CreateListing() {
           </div>
           <div className="form-group">
             <label className="form-label">Facilities</label>
-            <div className="facilities-grid">{FACILITIES.map(f => <span key={f} className="facility-tag" style={{cursor:'pointer',background:facilities.includes(f)?'rgba(99,102,241,0.3)':'rgba(99,102,241,0.1)'}} onClick={() => toggleFacility(f)}>{facilities.includes(f) ? '✓ ':''}{f}</span>)}</div>
+            <div className="facilities-grid">{FACILITIES.map(f => <span key={f} className="facility-tag" style={{cursor:'pointer',background:facilities.includes(f)?'rgba(232,99,74,0.25)':'rgba(232,99,74,0.1)'}} onClick={() => toggleFacility(f)}>{facilities.includes(f) ? '✓ ':''}{f}</span>)}</div>
           </div>
           <div className="form-group"><label className="form-label">House Rules (one per line)</label><textarea className="form-input" value={form.rules} onChange={e => set('rules', e.target.value)} placeholder="No smoking&#10;Quiet after 10 PM" rows={3} /></div>
           <div className="form-group">

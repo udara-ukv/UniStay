@@ -38,14 +38,14 @@ export default function ChatWidget(){
     <div style={{position:'fixed',right:20,bottom:20,zIndex:60}}>
       {open ? (
         <div style={{width:320,height:420,boxShadow:'0 6px 24px rgba(0,0,0,0.15)',borderRadius:8,overflow:'hidden',background:'#fff',display:'flex',flexDirection:'column'}}>
-          <div style={{padding:12,background:'#111827',color:'#fff',fontWeight:700,display:'flex',justifyContent:'space-between',alignItems:'center'}}>
+          <div style={{padding:12,background:'#1f2128',color:'#fff',fontWeight:700,display:'flex',justifyContent:'space-between',alignItems:'center'}}>
             <div>Chat Assistant</div>
             <button onClick={()=>setOpen(false)} style={{background:'transparent',color:'#fff',border:0}}>✕</button>
           </div>
           <div ref={scrollRef} style={{flex:1,padding:12,overflowY:'auto'}}>
             {messages.map((m,i)=>(
               <div key={i} style={{marginBottom:8,display:'flex',justifyContent: m.from==='user' ? 'flex-end' : 'flex-start'}}>
-                <div style={{maxWidth:'78%',padding:'8px 10px',borderRadius:8,background: m.from==='user' ? '#111827' : '#f3f4f6',color: m.from==='user' ? '#fff' : '#111'}}>{m.text}</div>
+                <div style={{maxWidth:'78%',padding:'8px 10px',borderRadius:8,background: m.from==='user' ? '#1f2128' : '#f3f4f6',color: m.from==='user' ? '#fff' : '#111'}}>{m.text}</div>
               </div>
             ))}
           </div>
@@ -55,7 +55,7 @@ export default function ChatWidget(){
           </div>
         </div>
       ) : (
-        <button onClick={()=>setOpen(true)} style={{width:56,height:56,borderRadius:'50%',background:'#111827',color:'#fff',border:0,boxShadow:'0 6px 18px rgba(0,0,0,0.15)'}}>💬</button>
+        <button onClick={()=>setOpen(true)} style={{width:56,height:56,borderRadius:'50%',background:'#1f2128',color:'#fff',border:0,boxShadow:'0 6px 18px rgba(0,0,0,0.15)'}}>💬</button>
       )}
     </div>
   );

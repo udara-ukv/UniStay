@@ -14,20 +14,28 @@ from datetime import datetime, timedelta
 
 BASE_DIR = Path(__file__).resolve().parent
 DB_DIR = BASE_DIR / 'database'
-DB_PATH = DB_DIR / 'unistay.db'
+DB_PATH = Path(os.getenv('DB_PATH', str(DB_DIR / 'unistay.db')))
 SCHEMA_PATH = DB_DIR / 'schema.sql'
 SEED_PATH = DB_DIR / 'seed.sql'
-UPLOADS_DIR = BASE_DIR.parent / 'uploads'
+UPLOADS_DIR = Path(os.getenv('UPLOADS_DIR', str(BASE_DIR.parent / 'uploads')))
 UPLOADS_DIR.mkdir(parents=True, exist_ok=True)
 
 JWT_SECRET = os.getenv('JWT_SECRET', 'unistay-secret-key-change-in-production')
 JWT_ALGORITHM = 'HS256'
 JWT_EXPIRES_SECONDS = 7 * 24 * 3600
 
+allowed_origins = [
+    'http://localhost:5173',
+    'http://localhost:3000',
+]
+origin_env = os.getenv('CORS_ORIGINS', '')
+if origin_env:
+    allowed_origins.extend([o.strip() for o in origin_env.split(',') if o.strip()])
+
 app = FastAPI(title='UniStay API', version='1.0.0')
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=['http://localhost:5173', 'http://localhost:3000'],
+    allow_origins=allowed_origins,
     allow_credentials=True,
     allow_methods=['*'],
     allow_headers=['*'],
